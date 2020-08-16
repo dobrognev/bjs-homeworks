@@ -26,6 +26,7 @@ function calculateFormula() {
 	let y = 22;
 	let z = 0;
 	let result = x * y + 5 * z + x - 1
+
 	// реализуйте здесь задание №3
 
 	return result// ваш ответ;
