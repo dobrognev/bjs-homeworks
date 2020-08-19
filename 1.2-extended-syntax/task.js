@@ -3,12 +3,12 @@
 function getResult(a, b, c) {
     let x = [];
 
-    let z = b ** 2 - 4 * a * c
+    let reDisc = b ** 2 - 4 * a * c
 
-    if (z >= 0)
-        x[0] = (-b + Math.sqrt(z)) / 2 * a;
-    if (z > 0)
-        x[1] = (-b - Math.sqrt(z)) / 2 * a;
+    if (reDisc >= 0)
+        x[0] = (-b + Math.sqrt(reDisc)) / 2 * a;
+    if (reDisc > 0)
+        x[1] = (-b - Math.sqrt(reDisc)) / 2 * a;
 
     return x;
 
@@ -17,30 +17,21 @@ function getResult(a, b, c) {
 }
 
 function getAverageMark(marks) {
-    let averageMark = 0;
     let summ = 0;
 
-    if (marks.length == false) {
+    if (!marks.length) {
         console.log("Не были введены оценки");
-        averageMark = 0;
+        return 0;
     }
     else if (marks.length > 5) {
         console.log("Оценок больше чем нужно, им светит обрезание -*|*-");
         marks.splice(5);
-        for (let j = 0; j < marks.length; j++) {
-            summ = summ + marks[j];
-        }
-        averageMark = summ / marks.length;
-
-    } else {
-        for (let i = 0; i < marks.length; i++) {
-            summ = summ + marks[i];
-        }
-        averageMark = summ / marks.length;
-
+    }
+    for (let j = 0; j < marks.length; j++) {
+        summ = summ + marks[j];
     }
     // код для задачи №2 писать здесь
-    return averageMark;
+    return summ / marks.length;
 }
 
 function askDrink(name, dateOfBirthday) {
