@@ -2,20 +2,19 @@
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
 
-    if (typeof (percent) != "number" || percent < 0 || percent === NaN) {
-        console.log("Введен неверный тип данных у процентов")
-        return "Введен неверный тип данных у процентов";
+    if (typeof (percent) != "number" || percent <= 0 || Number.isNaN(percent)) {
+        return "Процентная ставка введена некорректно";
     }
-    if (typeof (contribution) != "number" || contribution < 0 || contribution === NaN) {
-        console.log("Введен неверный тип данных у первоначального взноса")
-        return "Введен неверный тип данных у первоначального взноса";
+    if (typeof (contribution) != "number" || contribution < 0 || Number.isNaN(contribution)) {
+        return "Первоначальный взнос введен некорректно";
     }
-    if (typeof (amount) != "number" || amount < 0 || amount === NaN) {
-        console.log("Введен неверный тип данных у суммы кредиты")
-        return "Введен неверный тип данных у суммы кредита";
+    if (typeof (amount) != "number" || amount < 0 || Number.isNaN(amount)) {
+        return "Сумма кредита введена некорректно";
+    }
+    if (Number.isNaN(date)) {
+        return "Введете дату корректно";
     }
     if (contribution >= amount) {
-        console.log("Ипотека бессмысленна")
         return 0;
     }
 
@@ -30,6 +29,9 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 }
 
 function getGreeting(name) {
-    // код для задачи №2 писать здесь
-    // return greeting;
+    if (name == null || name == undefined || name == "") {
+        name = "Аноним";
+    }
+    console.log(`Привет, мир! Меня зовут ${name}`)
+    return String(`Привет, мир! Меня зовут ${name}`)
 }
