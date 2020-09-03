@@ -38,9 +38,9 @@ function getAverageMark(marks) {
 
     let summ = 0;
 
-    if (marks.length > 5) {
-        marks.splice(5);
-        console.log("Оценок больше пяти. Учитываются первые 5");
+    if (marks.length > 10) {
+        marks.splice(10);
+        console.log("Оценок больше десяти. Учитываются первые 10");
     }
     if (marks.length == 0) {
         return 0;
@@ -56,18 +56,17 @@ function getAverageMark(marks) {
 
 function getAverageScore(data) {
 
-    let arrMarks = {};
-    let summSubject = 0;
-
-    for (let subject in data) {
-        summSubject++;
-    } // Посчитали кол-во предметов
-
+    const arrMarks = {};
+    let summAllMarks = 0;
     for (let k in data) {
         arrMarks[k] = getAverageMark(data[k]);
-    } // Посчитали среднюю оченку по каждому предмету и создали массив из оценок
-
-
+        summAllMarks += arrMarks[k];    // Посчитали среднюю оценку по каждому предмету и создали массив из оценок
+    }
+    arrMarks.average = summAllMarks / Object.keys(data).length;  // создали новый ключ со средним значением в объект
+    if (Object.keys(data).length == 0) {
+        arrMarks.average = 0
+    }
+    return arrMarks
 }
 
 
@@ -75,5 +74,4 @@ function getPersonData(secretData) {
 
 }
 function getDecodedValue(secret) {
-
 }
