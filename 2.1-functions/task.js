@@ -69,9 +69,13 @@ function getAverageScore(data) {
     return arrMarks
 }
 
+function getDecodedValue(secret) {
+    return (secret == 1) ? 'Эмильо' : 'Родриго';
+}
 
 function getPersonData(secretData) {
 
+    return { firstName: getDecodedValue(secretData.aaa), lastName: getDecodedValue(secretData.bbb) }
+
 }
-function getDecodedValue(secret) {
-}
+
