@@ -1,15 +1,31 @@
-String.prototype.isPalindrome = function mrPolindrome(word) {
+String.prototype.isPalindrome = function mrPalindrome() {
+
+    let str = this.replaceAll(" ", "").toLowerCase();
+    return str == str.split('').reverse().join('');
+
 }
 
 function getAverageMark(marks) {
+    let summ = 0;
 
+    if (marks.length == 0) return 0;
 
-    // код для задачи №2 писать здесь
-    // return averageMark
+    for (let i in marks) {
+        summ += marks[i];
+    }
+
+    return roundedAverage = Math.round(summ / marks.length);
 
 }
 
 function checkBirthday(birthday) {
-    // код для задачи №3 писать здесь
-    // return verdict
+
+    let now = Date.now();
+    let diff = (now - Date.parse(birthday)) / 86400000 / 365;
+    diff = Math.round(diff);
+    if (diff >= 18) {
+        return true
+    }
+    else { return false }
+
 }
