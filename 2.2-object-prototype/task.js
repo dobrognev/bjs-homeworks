@@ -21,7 +21,7 @@ function getAverageMark(marks) {
 function checkBirthday(birthday) {
 
     let now = Date.now();
-    let diff = (now - Date.parse(birthday)) / 86400000 / 365;
+    let diff = (now - Date.parse(birthday)) / 86400000 / 365.25;
     diff = Math.round(diff);
     if (diff >= 18) {
         return true
