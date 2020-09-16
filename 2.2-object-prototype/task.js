@@ -1,6 +1,6 @@
 String.prototype.isPalindrome = function mrPalindrome() {
 
-    let str = this.replaceAll(" ", "").toLowerCase();
+    const str = this.replaceAll(" ", "").toLowerCase();
     return str == str.split('').reverse().join('');
 
 }
@@ -13,8 +13,8 @@ function getAverageMark(marks) {
     for (let i in marks) {
         summ += marks[i];
     }
-
-    return roundedAverage = Math.round(summ / marks.length);
+    const roundedAverage = Math.round(summ / marks.length);
+    return roundedAverage;
 
 }
 
@@ -22,10 +22,6 @@ function checkBirthday(birthday) {
 
     let now = Date.now();
     let diff = (now - Date.parse(birthday)) / 86400000 / 365.25;
-    diff = Math.round(diff);
-    if (diff >= 18) {
-        return true
-    }
-    else { return false }
 
+    return diff >= 18;
 }
