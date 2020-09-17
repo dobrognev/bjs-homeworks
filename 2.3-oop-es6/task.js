@@ -9,7 +9,7 @@ class PrintEditionItem {
     }
 
     fix() {
-        return this.state * 1.5;
+        this.state = this.state * 1.5;
     }
 
     set stateValue(_state) {
