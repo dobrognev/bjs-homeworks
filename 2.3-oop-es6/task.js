@@ -14,11 +14,11 @@ class PrintEditionItem {
 
     set state(newState) {
         if (newState < 0) {
-            this._state = 0
+            this._state = 0;
         } else if (newState > 100) {
-            this._state = 100
+            this._state = 100;
         } else {
-            this._state = newState
+            this._state = newState;
         }
     }
     get state() {
@@ -60,7 +60,7 @@ class DetectiveBook extends Book {
 
 const sherlock = new PrintEditionItem("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
 
-console.log(sherlock.name) // Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе
+console.log(sherlock.name); // Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе
 console.log(sherlock.releaseDate); // 2019
 console.log(sherlock.state); // 100
 sherlock.fix();
@@ -69,7 +69,7 @@ console.log(sherlock.state); // 100
 const picknick = new FantasticBook("Аркадий и Борис Стругацкие", "Пикник на обочине", 1972, 168);
 
 console.log(picknick.author); // Аркадий и Борис Стругацкие
-console.log(picknick.name) //  Пикник на обочине
+console.log(picknick.name); //  Пикник на обочине
 picknick.state = 10;
 console.log(picknick.state); //10
 picknick.fix();
