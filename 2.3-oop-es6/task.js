@@ -1,3 +1,5 @@
+// Задача №1
+
 class PrintEditionItem {
 
     constructor(name, releaseDate, pagesCount) {
@@ -74,3 +76,28 @@ picknick.state = 10;
 console.log(picknick.state); //10
 picknick.fix();
 console.log(picknick.state); //15
+
+// Задача № 2
+
+class Library {
+    constructor(name) {
+        this.name = name;
+        this.books = [];
+    }
+
+    addBook(book) {
+        if (book.state > 30) {
+            this.books.push(Library.books)
+        } else {
+            console.log("Состояние книги ужасное. Нужно восстановить")
+        }
+    }
+    findBookBy(type, value) {
+
+    }
+
+    giveBookByName(bookName) {
+
+    }
+
+}
